@@ -20,6 +20,7 @@ public class PacienteRequest {
     private String sobrenome;
 
     private String email;
+
     @NotBlank(message = "CPF é obrigatório")
     private String cpf;
 }

@@ -91,6 +91,15 @@ persistência e repeti-las novamente como uma das exceções não verificadas e 
 Marcamos beans com @Service para indicar que ele está mantendo a lógica de negócios. Não há outra especialidade, além 
 do uso na camada de serviço.
 
+#Swagger
+
+http://localhost:8080/swagger-ui/#/
+
+
+##Processo para incluir Segurança
+
+
+
 ## Artigos Interessantes
 
 https://www.linkedin.com/pulse/limpando-ainda-mais-seu-c%C3%B3digo-spring-boot-com-denis-caminha/?originalSubdomain=pt

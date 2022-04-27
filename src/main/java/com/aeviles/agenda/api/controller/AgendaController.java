@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,7 +48,8 @@ public class AgendaController {
     }
 
     //post
-    public ResponseEntity<AgendaResponse> salvar(@RequestBody AgendaRequest agendaRequest){
+    @PostMapping
+    public ResponseEntity<AgendaResponse> salvar(@Valid @RequestBody AgendaRequest agendaRequest){
 
         //transforma de AgendaRequest para Agenda e depois de Agenda para AgendaResponse
         Agenda agenda = agendaMapper.toAgenda(agendaRequest);
