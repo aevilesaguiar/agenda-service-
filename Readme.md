@@ -30,6 +30,11 @@ sobrenome varchar (100),
 cpf varchar(50),
 email varchar (100)
 );
+##Por que ModelMapper?
+
+O objetivo do ModelMapper é facilitar o mapeamento de objetos, determinando automaticamente como um modelo de objeto é 
+mapeado para outro, com base em convenções, da mesma forma que um humano faria - enquanto fornece uma API simples e 
+segura para refatoração para lidar com casos de uso específicos
 
 ##@RequiredArgsConstructor
 
@@ -55,6 +60,41 @@ necessidade de escrever todo o código anterior para usufruir da injeção de de
 após compilar o projeto, abri o .class da classe em questão, e no fim do arquivo o Lombok adicionou o construtor com
 todas as dependências necessárias
 
+## por que anotar com
+@Component: é um estereótipo genérico para qualquer componente gerenciado pelo Spring;
+
+Podemos usar o @Component no aplicativo para marcar os beans como componentes gerenciados do Spring. O Spring apenas
+registra beans com @Component sem procurar por @Service e @Repository os quais são registrados no ApplicationContext
+porque são anotados com @Component ,
+
+
+@Service faz anotações de classes na camada de serviço;
+@Repository anota classes na camada de persistência, que atuará como um repositório de banco de dados;
+
+Diferenças entre @Component, @Service e @Repository
+A principal diferença entre esses estereótipos é que eles são usados para diferentes classificações.
+
+Quando anotamos uma classe para detecção automática, devemos usar o respectivo estereótipo.
+
+@Componente
+Podemos usar o @Component no aplicativo para marcar os beans como componentes gerenciados do Spring. O Spring apenas 
+registra beans com @Component sem procurar por @Service e @Repository os quais são registrados no ApplicationContext 
+porque são anotados com @Component.
+
+@Service e @Repository são componentes especíais de @Component. Tecnicamente são iguais, mas utilizados para diferentes casos.
+
+@Repositório
+O @Repository tem como objetivo criar beans para a parte de persistência, além de capturar exceções específicas de 
+persistência e repeti-las novamente como uma das exceções não verificadas e unificadas do Spring.
+
+@Service
+Marcamos beans com @Service para indicar que ele está mantendo a lógica de negócios. Não há outra especialidade, além 
+do uso na camada de serviço.
+
 ## Artigos Interessantes
 
 https://www.linkedin.com/pulse/limpando-ainda-mais-seu-c%C3%B3digo-spring-boot-com-denis-caminha/?originalSubdomain=pt
+
+http://modelmapper.org/
+
+https://receitasdecodigo.com.br/spring-framework/component-repository-service-em-spring#:~:text=Podemos%20usar%20o%20%40Component%20no,%2F%2F%20%5B...%5D
