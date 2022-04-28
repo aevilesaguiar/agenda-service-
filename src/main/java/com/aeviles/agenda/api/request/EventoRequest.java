@@ -15,12 +15,12 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 public class EventoRequest {
     @NotBlank(message = "Nome do Evento é obrigatório")
-    private String nomeEvento;
+    private String nome_events;
 
     @NotBlank(message = "Nome do Palestrante é obrigatorio")
     private String nome;
 
-    @NotBlank(message = "Sobrenome do Paciente é obrigatório")
+    @NotBlank(message = "Sobrenome do Palestrante é obrigatório")
     private String sobrenome;
 
     private String email;

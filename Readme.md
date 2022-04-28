@@ -107,15 +107,15 @@ senha para autorizar gerada na hora quando rodo o spring
 Possui uma camada antes por isso não é possivel executar pelo o POSTMAN, pois o Spring Security criou uma camada para proteção
 
 Para gerar o token foi usado o JWT - https://jwt.io/#debugger-io
-primeiro fiz um POST com o usuario e senha ele gerou o token
+
+
+primeiro fiz um POST com o usuario e senha ele gerou o tokenz\
 ![img_5.png](img_5.png)
 
-copiei o tken do postman e joguei no JWT (adicionamos 10 minutos para esse token)
+copiei o tken do postman e joguei no JWT (adicionamos 10 minutos para esse token), por isso precisamos atualizar o itoken 
 
 ![img_4.png](img_4.png)
 
-
-foi criado outro filtro para validar o token
 
 ## O que é Flyway
 

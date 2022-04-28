@@ -55,7 +55,7 @@ public class CustomAuthenticationFilterConfig extends UsernamePasswordAuthentica
         //ele vai ter um username , a data de expiração e a url do request de onde está vindo
         String access_token = JWT.create()
                 .withSubject(user.getUsername())//usrname do usuario no springSecurity
-                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000))//peguei a hora em milisegundos ex: vendo jwt  "iat": 1516239022 - esse valor 10*60*1000 é 10 minutos
+                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 10000))//peguei a hora em milisegundos ex: vendo jwt  "iat": 1516239022 - esse valor 10*60*1000 é 10 minutos
                 .withIssuer(request.getRequestURL().toString())//saber de onde veio a request
                 .sign(algorithm);
 

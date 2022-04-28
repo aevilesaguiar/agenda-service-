@@ -14,7 +14,7 @@ import lombok.Setter;
 public class EventoResponse {
 
     private Long id;
-    private String nomeEvento;
+    private String nome_events;
     private String nome;
     private String sobrenome;
     private String email;

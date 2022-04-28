@@ -17,7 +17,7 @@ public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//quem gerencia esses valores é o banco
     private Long id;
-    private String nomeEvento;
+    private String nome_events;
     private String nome;
     private String sobrenome;
     private String email;
