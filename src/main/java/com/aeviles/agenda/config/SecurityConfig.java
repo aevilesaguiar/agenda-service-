@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -41,43 +42,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //metodoS gerado da própria  classe SecurityConfig  alt+insert -override
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
     }
 
     //O SWAGGER PAROU DE FUNCIONAR VAMOS CONFIGURAR ALGUMAS COISAS DA APLICAÇÃO
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-      //  super.configure(http);
 
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll();//a parte do swagger ficará aberta sem autenticação
-        //SE QUALQUER CHAMADA QUE ESTIVER NA NOSSA AUTH_WHITELIST ESTÃO PERMITIDAS
-
-
-        //SERÁ CRIADO DUAS CLASSES
-
-
-        //PRIMEIRO EU AUTENTICO
-
-
+        http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll();
+        http.authorizeRequests().anyRequest().authenticated();
+        //AUTENTICAÇÃO
+        http.addFilter(new CustomAuthenticationFilterConfig(authenticationManagerBean()));
         //AUTORIZAÇÃO
-
-
-        //filtro para autenticaçãoManager
-
-
-        //filtro para autorizaçãoManager
-
-
-
+        http.addFilterBefore(new CustomAuthorizationFilterConfig(), UsernamePasswordAuthenticationFilter.class);
     }
 
 
     @Bean
     @Override
-    protected AuthenticationManager authenticationManager() throws Exception {
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 

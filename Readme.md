@@ -101,6 +101,19 @@ http://localhost:8080/swagger-ui/#/
 senha para autorizar gerada na hora quando rodo o spring
 
 Possui uma camada antes por isso não é possivel executar pelo o POSTMAN, pois o Spring Security criou uma camada para proteção
+
+Para gerar o token foi usado o JWT - https://jwt.io/#debugger-io
+primeiro fiz um POST com o usuario e senha ele gerou o token
+![img_5.png](img_5.png)
+
+copiei o tken do postman e joguei no JWT (adicionamos 10 minutos para esse token)
+
+![img_4.png](img_4.png)
+
+
+foi criado outro filtro para validar o token
+
+
 ## Artigos Interessantes
 
 https://www.linkedin.com/pulse/limpando-ainda-mais-seu-c%C3%B3digo-spring-boot-com-denis-caminha/?originalSubdomain=pt
