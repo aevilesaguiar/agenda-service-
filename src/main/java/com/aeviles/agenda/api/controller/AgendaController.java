@@ -5,7 +5,7 @@ import com.aeviles.agenda.api.mapper.AgendaMapper;
 import com.aeviles.agenda.api.request.AgendaRequest;
 import com.aeviles.agenda.api.response.AgendaResponse;
 import com.aeviles.agenda.domain.entity.Agenda;
-import com.aeviles.agenda.domain.service.AgendaService;
+import com.aeviles.agenda.service.AgendaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ public class AgendaController {
     @GetMapping
     public ResponseEntity<List<AgendaResponse>> buscarTodos(){
         List<Agenda> agendaList = agendaService.findAll();
-        List<AgendaResponse> agendaResponses = agendaMapper.toPacienteResponseList(agendaList);
+        List<AgendaResponse> agendaResponses = agendaMapper.toEventoResponseList(agendaList);
 
         return ResponseEntity.status(HttpStatus.OK).body(agendaResponses);
 

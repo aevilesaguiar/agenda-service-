@@ -13,9 +13,13 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PacienteRequest {
-    @NotBlank(message = "Nome do Paciente é obrigatório")
+public class EventoRequest {
+    @NotBlank(message = "Nome do Evento é obrigatório")
+    private String nomeEvento;
+
+    @NotBlank(message = "Nome do Palestrante é obrigatorio")
     private String nome;
+
     @NotBlank(message = "Sobrenome do Paciente é obrigatório")
     private String sobrenome;
 

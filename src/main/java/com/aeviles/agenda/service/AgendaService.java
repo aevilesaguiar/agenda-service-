@@ -1,11 +1,10 @@
-package com.aeviles.agenda.domain.service;
+package com.aeviles.agenda.service;
 
 import com.aeviles.agenda.domain.entity.Agenda;
-import com.aeviles.agenda.domain.entity.Paciente;
+import com.aeviles.agenda.domain.entity.Evento;
 import com.aeviles.agenda.domain.repository.AgendaRepository;
 import com.aeviles.agenda.exceptional.BussinessException;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.apache.bcel.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,7 +18,7 @@ import java.util.Optional;
 public class AgendaService {
 
     private final AgendaRepository agendaRepository;
-    private final PacienteService pacienteService;
+    private final EventoService eventoService;
 
     public List<Agenda> findAll(){
         return  agendaRepository.findAll();
@@ -33,7 +32,7 @@ public class AgendaService {
         //TODO: para validar as regras de negócio
         //1 -validar se paciente existe
         //aqui existe o paciente
-        Optional<Paciente> optionalPaciente = pacienteService.findById(agenda.getPaciente().getId());//dentro de agenda temos o Paciente,então pegamos o getPaciente e pegamos o id
+        Optional<Evento> optionalPaciente = eventoService.findById(agenda.getEvento().getId());//dentro de agenda temos o Paciente,então pegamos o getPaciente e pegamos o id
 
         if(optionalPaciente.isEmpty()){
             throw new BussinessException("Paciente não encontrado");
@@ -47,10 +46,11 @@ public class AgendaService {
         }
 
         //se passar da Bussiness exception
-        agenda.setPaciente(optionalPaciente.get());//setar o paciente do optionalPaciente
+        agenda.setEvento(optionalPaciente.get());//setar o paciente do optionalPaciente
         agenda.setDatacriacao(LocalDateTime.now());//ele pega o horario atual e seta
 
         return agendaRepository.save(agenda);
+
     }
 
 

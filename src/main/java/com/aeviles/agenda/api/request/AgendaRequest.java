@@ -24,7 +24,7 @@ public class AgendaRequest {
     private LocalDateTime horario;
 
     @NotNull
-    private Long pacienteId;
+    private Long eventoId;
 
 
 

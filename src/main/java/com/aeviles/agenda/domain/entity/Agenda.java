@@ -28,8 +28,8 @@ public class Agenda {
     private LocalDateTime datacriacao;
 
 
-    @ManyToOne//para cada vez que eu registro uma agenda nós temos um paciente
-    private Paciente paciente;
+    @ManyToOne//para cada vez que eu registro uma agenda nós temos um evento
+    private Evento evento;
 
 
 

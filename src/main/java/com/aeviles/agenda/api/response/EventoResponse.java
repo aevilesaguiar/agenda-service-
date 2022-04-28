@@ -11,9 +11,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PacienteResponse {
+public class EventoResponse {
 
     private Long id;
+    private String nomeEvento;
     private String nome;
     private String sobrenome;
     private String email;

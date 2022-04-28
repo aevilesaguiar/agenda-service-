@@ -1,4 +1,4 @@
-package com.aeviles.agenda.domain.service;
+package com.aeviles.agenda.service;
 
 import com.aeviles.agenda.domain.entity.Usuario;
 import com.aeviles.agenda.domain.repository.UsuarioRepository;

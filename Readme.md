@@ -96,6 +96,10 @@ do uso na camada de serviço.
 http://localhost:8080/swagger-ui/#/
 
 
+## Spring Boot 2,
+https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockito-junit-example/
+
+
 ##Processo para incluir Segurança
 
 senha para autorizar gerada na hora quando rodo o spring
@@ -112,6 +116,26 @@ copiei o tken do postman e joguei no JWT (adicionamos 10 minutos para esse token
 
 
 foi criado outro filtro para validar o token
+
+## O que é Flyway
+
+- ferramenta de migração de banco de dados
+- Controle de versão para banco de dados
+- Verssiono junto com o código
+
+ **Comandos básicos**
+
+
+haverá uma pasta na aplicação que por padrão é a db.migration
+- Migrate(migro o código para a versão mais atual do script)
+- Clean(limpa todo o banco de dados)
+- Info(vai ter um objeto que vai dizer se existe alguma coisa pendente)
+- Validate(valida se o bd esta aderente as migrações - valida se a tabela está condizente com o modelo atual)
+- Undo(desfaz a migração - apenas no interprise e não é indicado pelo o flyway)
+- Baseline(se vc já tem o banco e indica que apartir de um momento usar)
+- Repair( corrige as tableas de histórico)
+
+
 
 
 ## Artigos Interessantes

@@ -23,7 +23,7 @@ public class AgendaResponse {
 
     private LocalDateTime horario;
 
-    private PacienteResponse paciente;
+    private EventoResponse paciente;
 
 
 }
