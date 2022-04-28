@@ -30,12 +30,12 @@ public class AgendaService {
 
     public Agenda salvar(Agenda agenda){
         //TODO: para validar as regras de negócio
-        //1 -validar se paciente existe
-        //aqui existe o paciente
-        Optional<Evento> optionalPaciente = eventoService.findById(agenda.getEvento().getId());//dentro de agenda temos o Paciente,então pegamos o getPaciente e pegamos o id
+        //1 -validar se evento existe
+        //aqui existe o evento
+        Optional<Evento> optionalEvento = eventoService.findById(agenda.getEvento().getId());//dentro de agenda temos o Paciente,então pegamos o getPaciente e pegamos o id
 
-        if(optionalPaciente.isEmpty()){
-            throw new BussinessException("Paciente não encontrado");
+        if(optionalEvento.isEmpty()){
+            throw new BussinessException("Evento não encontrado");
         }
         //2-validar o horario
 
@@ -46,7 +46,7 @@ public class AgendaService {
         }
 
         //se passar da Bussiness exception
-        agenda.setEvento(optionalPaciente.get());//setar o paciente do optionalPaciente
+        agenda.setEvento(optionalEvento.get());//setar o evento do optionalEvento
         agenda.setDatacriacao(LocalDateTime.now());//ele pega o horario atual e seta
 
         return agendaRepository.save(agenda);

@@ -144,4 +144,6 @@ https://www.linkedin.com/pulse/limpando-ainda-mais-seu-c%C3%B3digo-spring-boot-c
 
 http://modelmapper.org/
 
+https://imasters.com.br/desenvolvimento/autenticacao-com-jwt-no-spring-boot
+
 https://receitasdecodigo.com.br/spring-framework/component-repository-service-em-spring#:~:text=Podemos%20usar%20o%20%40Component%20no,%2F%2F%20%5B...%5D

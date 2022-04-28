@@ -50,7 +50,7 @@ class AgendaServiceTest {
 
     @Test
     @DisplayName("Deve salvar agendamento com sucesso")
-    void salvarComSucesso() {
+    void salverComSuccess() {
 
 
         //Arrange - Processo para fazer o teste
@@ -66,7 +66,7 @@ class AgendaServiceTest {
 
         agenda.setEvento(evento);
 
-        //Vou emular o retorno de   Optional<Evento> optionalEvento = "pacienteService.findById(agenda.getEvento().getId());"  da classe agendaService
+        //Vou emular o retorno de   Optional<Evento> optionalEvento = "agendaService.findById(agenda.getEvento().getId());"  da classe agendaService
         Mockito.when(eventoService.findById(agenda.getEvento().getId())).thenReturn(Optional.of(evento));
 
         //vou emular  Optional<Agenda> byHorario = agendaRepository.findByHorario(agenda.getHorario());
@@ -96,7 +96,7 @@ class AgendaServiceTest {
 
     @Test
     @DisplayName("Não deve salvar agendamento sem evento")
-    void salvarErroPacienteNaoEncontrado(){
+     void salverErrorEventNaoEncontre(){
 
 
 
@@ -113,7 +113,7 @@ class AgendaServiceTest {
 
         agenda.setEvento(evento);
 
-        //Vou emular o retorno de   Optional<Paciente> optionalPaciente = "pacienteService.findById(agenda.getPaciente().getId());"  da classe agendaService
+
         Mockito.when(eventoService.findById(ArgumentMatchers.any())).thenReturn(Optional.empty());
 
         BussinessException bussinessException= assertThrows(BussinessException.class, ()->{
