@@ -98,8 +98,9 @@ http://localhost:8080/swagger-ui/#/
 
 ##Processo para incluir Segurança
 
+senha para autorizar gerada na hora quando rodo o spring
 
-
+Possui uma camada antes por isso não é possivel executar pelo o POSTMAN, pois o Spring Security criou uma camada para proteção
 ## Artigos Interessantes
 
 https://www.linkedin.com/pulse/limpando-ainda-mais-seu-c%C3%B3digo-spring-boot-com-denis-caminha/?originalSubdomain=pt
