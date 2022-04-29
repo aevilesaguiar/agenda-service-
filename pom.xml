@@ -44,7 +44,7 @@
       <groupId>com.auth0</groupId>  
       <artifactId>java-jwt</artifactId>  
       <version>3.18.3</version> 
-    </dependency>
+    </dependency>  
     <dependency> 
       <groupId>org.assertj</groupId>  
       <artifactId>assertj-core</artifactId>  
@@ -80,11 +80,6 @@
       <artifactId>spring-boot-starter-security</artifactId> 
     </dependency>  
     <dependency> 
-      <groupId>org.springframework.security</groupId>  
-      <artifactId>spring-security-test</artifactId>  
-      <scope>test</scope> 
-    </dependency>  
-    <dependency> 
       <groupId>junit</groupId>  
       <artifactId>junit</artifactId>  
       <scope>test</scope> 
@@ -104,34 +99,34 @@
           </excludes> 
         </configuration> 
       </plugin>  
-      <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>2.5.0</version>
-        <configuration>
-          <schemaVersion>v2</schemaVersion>
-          <subscriptionId>bd16a6e6-c727-4d5e-9e02-35c3dca9a3aa</subscriptionId>
-          <resourceGroup>agenda-1651176815619-rg</resourceGroup>
-          <appName>agenda-1651176815619</appName>
-          <pricingTier>P1v2</pricingTier>
-          <region>centralus</region>
-          <runtime>
-            <os>Windows</os>
-            <javaVersion>Java 11</javaVersion>
-            <webContainer>Java SE</webContainer>
-          </runtime>
-          <deployment>
-            <resources>
-              <resource>
-                <directory>${project.basedir}/target</directory>
-                <includes>
-                  <include>*.jar</include>
-                </includes>
-              </resource>
-            </resources>
-          </deployment>
-        </configuration>
-      </plugin>
+      <plugin> 
+        <groupId>com.microsoft.azure</groupId>  
+        <artifactId>azure-webapp-maven-plugin</artifactId>  
+        <version>2.5.0</version>  
+        <configuration> 
+          <schemaVersion>v2</schemaVersion>  
+          <subscriptionId>df58c130-f175-4e2f-baee-c563f49d0181</subscriptionId>  
+          <resourceGroup>agenda-1651176815619-rg</resourceGroup>  
+          <appName>agenda-1651176815619</appName>  
+          <pricingTier>P1v2</pricingTier>  
+          <region>centralus</region>  
+          <runtime> 
+            <os>Windows</os>  
+            <javaVersion>Java 11</javaVersion>  
+            <webContainer>Java SE</webContainer> 
+          </runtime>  
+          <deployment> 
+            <resources> 
+              <resource> 
+                <directory>${project.basedir}/target</directory>  
+                <includes> 
+                  <include>*.jar</include> 
+                </includes> 
+              </resource> 
+            </resources> 
+          </deployment> 
+        </configuration> 
+      </plugin> 
     </plugins> 
   </build> 
 </project>
