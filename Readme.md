@@ -32,7 +32,7 @@ Pequeno microserviço de agendamento de Meetup
 - Implementação do repository[ok]
 - Swagger[ok]
 - Testes locais via postman[ok]
-- Deploy no azure[ok]
+- Deploy no azure
 
 ## DTO
 
